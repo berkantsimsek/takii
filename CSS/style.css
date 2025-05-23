@@ -1,0 +1,350 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Header Stilleri */
+  header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header-top-bar {
+    background: #f4f4f4;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 14px;
+  }
+  
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .logo img {
+    width: 80px;
+    height: auto;
+  }
+  
+  .menu {
+    list-style: none;
+    display: flex;
+  }
+  
+  .menu li {
+    margin: 0 10px;
+  }
+  
+  .menu li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .menu li a.active,
+  .menu li a:hover {
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .right-nav a {
+    margin-left: 15px;
+    color: #333;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+/* Ana sayfa bölümü - Yüksekliği küçülttük */
+.home-section {
+    position: relative;
+    height: 400px; /* Slider yüksekliğini 300px yaparak resimleri küçük gösterebilirsiniz */
+    overflow: hidden;
+  }
+  
+  /* Slider kapsayıcısı */
+  .bg-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  /* Her bir slayt */
+  .bg-slider .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: fade 12s infinite;
+  }
+  
+  /* Animasyon zamanlaması: 3 resim için */
+  .bg-slider .slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .bg-slider .slide:nth-child(2) {
+    animation-delay: 4s;
+  }
+  
+  .bg-slider .slide:nth-child(3) {
+    animation-delay: 8s;
+  }
+  
+  /* Fade animasyonu */
+  @keyframes fade {
+    0% { opacity: 0; }
+    8% { opacity: 1; }
+    25% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  
+  /* İçerik (hero) bölümü */
+  .hero {
+    position: relative;
+    z-index: 2; /* Slider'ın üstünde görünmesi için */
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    /* Gerekirse metinlerin daha okunabilir olması için */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+  }
+  
+  
+/* Ürün Bölümleri */
+.products-section {
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .products-section h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  /* Ürün Izgara */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Ürün Kartı Stilleri */
+  .product-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden; /* İçerik taşmalarını gizler */
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Ürün Resimleri için Sabit Boyut ve Kırpma */
+  .product-card img {
+    width: 100%;
+    height: 250px; /* İstediğiniz sabit yüksekliği ayarlayın */
+    object-fit: cover; /* Resmi kapsayıcıya orantılı olarak yerleştirir ve taşan kısımları keser */
+    display: block;
+  }
+  
+  /* Ürün Kartı İçerik Alanı */
+  .product-card h3,
+  .product-card p {
+    padding: 0 15px;
+    text-align: left;
+  }
+  
+  .product-card h3 {
+    margin: 15px 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .product-card p {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    flex-grow: 1; /* Kartın kalan alanını kaplamaya yarar */
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: 250px; /* İstediğiniz yüksekliği ayarlayın */
+    object-fit: cover; /* Resmin kapsayıcıya uygun şekilde kırpılmasını sağlar */
+  }
+ 
+  
+  /* Blog Bölümü */
+  .blog-section {
+    padding: 50px 20px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  .blog-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+
+  /* Harita Bölümü Stili */
+.map-section {
+    text-align: center; /* Başlığı ortala */
+    padding: 40px 20px;
+    background-color: #f8f8f8; /* Hafif gri arka plan */
+}
+
+.map-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Harita Konteyneri */
+.map-container {
+    width: 100%;
+    max-width: 800px; /* Harita genişliği sınırlandı */
+    margin: 0 auto; /* Ortalamak için */
+    border-radius: 10px; /* Köşeleri yuvarlat */
+    overflow: hidden; /* Köşelerden taşmayı önler */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Haritanın Responsive Olmasını Sağla */
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+}
+
+
+/* Sepet Alanı  */
+#cart {
+    width: 300px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+#cart h2 {
+    text-align: center;
+    color: #333;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.delete-item {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-item:hover {
+    background-color: darkred;
+}
+
+#total-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #27ae60;
+    text-align: center;
+}
+
+/* Sepete Ekle Butonu */
+.add-to-cart {
+    background-color: #27ae60; /* Yeşil tonunda arka plan */
+    color: white; /* Beyaz yazı */
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px; /* Köşeleri yuvarlak yap */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover efekti - Üzerine gelince */
+.add-to-cart:hover {
+    background-color: #219150; /* Daha koyu yeşil */
+    transform: scale(1.05); /* Hafif büyütme efekti */
+}
+
+/* Aktifken (Tıklanınca) */
+.add-to-cart:active {
+    background-color: #1e8449;
+    transform: scale(0.98); /* Küçük bir basılma efekti */
+}
+
+  
+  footer {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;  /* Ortada hizalar */
+    align-items: center;
+    gap: 100px;  /* Öğeler arasında az boşluk bırakır */
+  }
+  
+  .footer-left p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  .footer-right a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem; /* Simgenin boyutunu ayarlar */
+    transition: color 0.3s;
+  }
+  
+  .footer-right a:hover {
+    color: #ccc;
+  }
+  
+
+
